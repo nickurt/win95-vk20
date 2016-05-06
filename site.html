@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="nl" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="css/site-style.css?v=1462476146185">
+    <title>de Volkskrant op Internet</title>
+
+<!--    _      __   __   _ _       _                _
+     __| |___  \ \ / /__| | |__ __| |___ _ __ _ _ _| |_
+    / _` / -_)  \ V / _ \ | / /(_-< / / '_/ _` | ' \  _|
+    \__,_\___|   \_/\___/_|_\_\/__/_\_\_| \__,_|_||_\__|
+
+    Made in Amsterdam
+    (c) de Volkskrant Crossmedia < volkskrant.nl/kijkverder > -->
+</head>
+<body>
+    <div class="main">
+        <a href="#" class="header"></a>
+
+        <a href="#" class="btn-home"></a>
+
+        <div id="content"></div>
+
+        <script type="text/html" id="tmpl-home">
+            <ul class="home section">
+                {{#each this}}
+                <li>
+                    <figure style="background-image:url('{{image}}')"></figure>
+                    <a href="#{{guid}}">{{title}}</a>
+                    <p>{{abstract}}</p>
+                </li>
+                {{/each}}
+            </ul>
+        </script>
+
+        <script type="text/html" id="tmpl-article">
+            <article class="article section">
+                <h1>{{title}}</h1>
+
+                <p>{{author}}</p>
+
+                <p class="lead">
+                    <figure style="background-image:url('{{image}}')"></figure>
+                    {{lead}}
+                </p>
+
+                {{text}}
+            </article>
+        </script>
+    </div>
+
+    <!-- build:js js/dist.js -->
+    <script src="lib/jquery/dist/jquery.js?v=1462476146185"></script>
+    <script src="lib/fastclick/lib/fastclick.js?v=1462476146185"></script>
+    <script src="lib/handlebars/handlebars.js?v=1462476146185"></script>
+    <script src="lib/vklib/src/vk.js?v=1462476146185"></script>
+    <script src="lib/vklib/src/track.js?v=1462476146185"></script>
+    <script src="lib/vklib/src/templates.js?v=1462476146185"></script>
+
+    <script src="js/site/model.js?v=1462476146185"></script>
+    <script src="js/site/app.js?v=1462476146185"></script>
+    <!-- endbuild -->
+</body>
+</html>
